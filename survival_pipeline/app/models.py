@@ -85,7 +85,7 @@ class ConsumerHC(Base):
 
     __tablename__ = "consumer_hc"
     loan_id = Column(Integer, primary_key=True)
-    app_id = ForeignKey("consumer_main.app_id")
+    app_id = Column(Integer, ForeignKey("consumer_main.app_id"))
     issue_date = Column(DateTime)
     close_date = Column(DateTime)
     riskclass = Column(String(50))
