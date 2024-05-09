@@ -18,10 +18,17 @@ data = from_sql_to_pandas(engine, "survival_data")
 
 # Dummify categorical variables
 encode_cols = ["riskclass", "gender", "mobile_operator", "marz"]
-survival_df = pd.get_dummies(data, columns=encode_cols, prefix=encode_cols, drop_first=True)
+survival_df = pd.get_dummies(data, columns=encode_cols, prefix=encode_cols, drop_first = False)
 
-# Drop unnecessary columns
-survival_df = survival_df.drop(columns=["app_id", "ap_date", "close_date"])
+
+
+# Drop unnecessary columns, columns with high correlation and reference groups
+# Specify which dummy columns to drop (reference categories and not meaningful ones)
+columns_to_drop = ["riskclass_Ստանդարտ", "gender_Female", "mobile_operator_Ucom",\
+                   "marz_ԵՐԵՎԱՆ","app_id", "ap_date", "close_date", "max_dpd", "initialamount"]
+
+#exclude the columns not needed for modelling
+survival_df = survival_df.drop(columns=columns_to_drop)
 
 # Instantiate the Survival class with relevant parameters
 inst = Survival(
@@ -33,7 +40,7 @@ inst.find_best_aft_model()
 
 # Fit the best AFT model and remove insignificant variables
 aft = inst.fit_best_aft_model(remove_insignificant=True)
-
+print(inst.model_summary(aft))
 # Generate predictions using the best AFT model for 30 periods
 pred = inst.predict_aft_model(aft, n_time_periods=30)
 pred.rename(columns={"id": "cliid"}, inplace=True)
