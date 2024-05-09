@@ -1,12 +1,9 @@
-# Use Python 3.10 Alpine image as base
-FROM python:3.10-alpine
+FROM python:3.10-slim-bullseye
 
-# Set environment variables
-ENV PYTHONUNBUFFERED=1
-
-# Update package index and install necessary packages
-RUN apk update && \
-    apk add --no-cache postgresql-dev gcc python3-dev musl-dev bash
+RUN apt-get update && apt-get install -y \
+    build-essential libpq-dev libfreetype6-dev libpng-dev libjpeg-dev \
+    libblas-dev liblapack-dev gfortran \
+    && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
