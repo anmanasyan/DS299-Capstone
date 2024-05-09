@@ -1,9 +1,9 @@
 # ignoring postgres volume
 
-app/postgres_data/*
-!app/postgres_data/.gitadd
-app/pgadmin_data/*
-!app/pgadmin_data/.gitadd
+survival_pipeline/postgres_data/*
+!survival_pipeline/survival_pipeline/.gitadd
+survival_pipeline/pgadmin_data/*
+!survival_pipeline/pgadmin_data/.gitadd
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
