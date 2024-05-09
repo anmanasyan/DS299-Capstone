@@ -18,9 +18,9 @@ Before getting started, ensure you have the following prerequisites installed:
    ```bash
    git clone <repository_url>
    ```
-2. Navigate to the project directory:
+2. Navigate to the survival_pipeline folder in the project directory:
    ```bash
-   cd <project_directory>
+   cd <project_directory/survival_pipeline>
    ```
 
 3. Build and start the Docker containers:
