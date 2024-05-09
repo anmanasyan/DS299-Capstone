@@ -5,16 +5,19 @@ from sqlalchemy import Enum
 from enum import Enum
 from pydantic import BaseModel
 
+
 # Definition of CallStatus enumeration
 class CallStatus(str, Enum):
     failed = "Failed"
     rejected = "Rejected"
     accepted = "Accepted"
 
+
 # Definition of MessageStatus enumeration
 class MessageStatus(str, Enum):
     delivered = "Delivered"
     failed = "Failed"
+
 
 # Definition of OutboundCalls Pydantic model
 class OutboundCalls(BaseModel):

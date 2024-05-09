@@ -18,17 +18,30 @@ data = from_sql_to_pandas(engine, "survival_data")
 
 # Dummify categorical variables
 encode_cols = ["riskclass", "gender", "mobile_operator", "marz"]
-survival_df = pd.get_dummies(data, columns=encode_cols, prefix=encode_cols, drop_first = False)
+survival_df = pd.get_dummies(
+    data, columns=encode_cols, prefix=encode_cols, drop_first=False
+)
 
-#Define the variable has_dahk to balance the heavy skew of n_dahk (explained in survival_analysis.ipynb)
-data['has_dahk'] = data['n_dahk'].apply(lambda x: 0 if x == 0 else 1)
+# Define the variable has_dahk to balance the heavy skew of n_dahk (explained in survival_analysis.ipynb)
+data["has_dahk"] = data["n_dahk"].apply(lambda x: 0 if x == 0 else 1)
 
 # Drop unnecessary columns, columns with high correlation, and reference groups
 # Specify which dummy columns to drop (reference categories and not meaningful ones)
-columns_to_drop = ["riskclass_Ստանդարտ", "gender_Female", "mobile_operator_Ucom",\
-                   "marz_ԵՐԵՎԱՆ","app_id", "ap_date", "close_date", "max_dpd", "initialamount", "n_dahk", "sum_dahk"]
+columns_to_drop = [
+    "riskclass_Ստանդարտ",
+    "gender_Female",
+    "mobile_operator_Ucom",
+    "marz_ԵՐԵՎԱՆ",
+    "app_id",
+    "ap_date",
+    "close_date",
+    "max_dpd",
+    "initialamount",
+    "n_dahk",
+    "sum_dahk",
+]
 
-#exclude the columns not needed for modelling
+# exclude the columns not needed for modelling
 survival_df = survival_df.drop(columns=columns_to_drop)
 
 # Instantiate the Survival class with relevant parameters

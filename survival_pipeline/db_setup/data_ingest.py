@@ -9,8 +9,21 @@ import pandas as pd
 from os.path import join
 
 from database import engine, _add_tables
-from models import Marz, ConsumerClient, ConsumerFamilyMembers, ConsumerMain, ConsumerHC, ECENGVehicleInfo,\
-      ECENGCESData, SurvivalData, SurvivalPredictions, OutboundCalls, OutboundTexts, OutboundEmails
+from models import (
+    Marz,
+    ConsumerClient,
+    ConsumerFamilyMembers,
+    ConsumerMain,
+    ConsumerHC,
+    ECENGVehicleInfo,
+    ECENGCESData,
+    SurvivalData,
+    SurvivalPredictions,
+    OutboundCalls,
+    OutboundTexts,
+    OutboundEmails,
+)
+
 
 def create_stored_procedure(engine, filepath, procedure_name):
     """

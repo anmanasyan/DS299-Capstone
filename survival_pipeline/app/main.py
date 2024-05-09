@@ -11,7 +11,7 @@ Endpoints:
 5. POST /create_email/: Creates new outbound email messages for one or more clients.
 """
 
-#Importing libraries
+# Importing libraries
 import uvicorn
 from typing import Union, List
 from fastapi import FastAPI, Depends, HTTPException, Body, Query
@@ -68,6 +68,7 @@ async def get_client_info(
     else:
         raise HTTPException(status_code=404, detail="No clients found")
 
+
 # Endpoint to retrieve survival data
 @app.get("/get_survival_data/")
 async def get_survival_data(
@@ -120,6 +121,7 @@ async def get_survival_data(
             status_code=404, detail="No survival data found for the given parameters"
         )
 
+
 # Endpoint to create a new outbound call
 @app.post("/create_call/", response_model=OC)
 def create_call(Outbound: OC, cliid: int, db: Session = Depends(get_db)):
@@ -148,6 +150,7 @@ def create_call(Outbound: OC, cliid: int, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_call)
     return new_call
+
 
 # Endpoint to create new outbound text message
 @app.post("/create_text/", response_model=List[OM])
@@ -191,6 +194,7 @@ def create_text(
             )
 
     return texts_created
+
 
 # Endpoint to create new outbound email messages
 @app.post("/create_email/", response_model=List[OM])

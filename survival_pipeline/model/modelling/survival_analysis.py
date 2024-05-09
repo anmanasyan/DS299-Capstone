@@ -219,9 +219,14 @@ class Survival:
         """
         aft_model.plot()
         plt.show()
-    
+
     def partial_effects_on_outcome(
-         self, aft_model, covariate: str, values: list, type: str = "cumulative_hazard", ax=None
+        self,
+        aft_model,
+        covariate: str,
+        values: list,
+        type: str = "cumulative_hazard",
+        ax=None,
     ):
         """Produces a plot comparing the baseline curve of the model versus what happens when a covariate is varied over values in a group.
 
@@ -251,7 +256,6 @@ class Survival:
 
         # Remove background grid
         ax.grid(False)
-
 
     def plot_survival_curve(self, aft_model, data_point: pd.DataFrame):
         """Plots the survival function for individuals, given their covariates.

@@ -8,6 +8,7 @@ import sqlalchemy.orm as orm
 from dotenv import load_dotenv
 import os
 
+
 def _add_tables(engine):
     """
     Function to add tables to the database.
@@ -24,6 +25,7 @@ def get_db():
         yield db
     finally:
         db.close()
+
 
 # Load environment variables from .env file
 load_dotenv(".env")
