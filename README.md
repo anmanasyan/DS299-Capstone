@@ -5,7 +5,7 @@
 
 This project aims to set up a Dockerized environment for PostgreSQL database, pgAdmin for database management, a model container, and an API container. It provides a convenient way to develop, deploy, and manage these components within a single Docker Compose configuration. The overall structure of the project is pictured below!
 
-![Docker](docs/docker.jpg)
+![Docker](images/docker.jpg)
 
 ## Prerequisites
 
@@ -36,6 +36,6 @@ Before getting started, ensure you have the following prerequisites installed:
     - username: admini@admin.com 
     - password: admin
     - When running for the first time, you must create a server. Configure it as shown in the below image (Password is blurred it should be `password`.)
-    ![Server Setup](docs/pgadmin_setup.png)
+    ![Server Setup](images/pgadmin_setup.png)
 - Access the API: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 - Access modelling: [http://127.0.0.1:8888/lab](http://127.0.0.1:8888/lab)
