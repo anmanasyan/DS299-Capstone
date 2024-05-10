@@ -183,7 +183,7 @@ class OutboundCalls(Base):
 
     __tablename__ = "outbound_calls"
     row_id = Column(Integer, primary_key=True, autoincrement=True)
-    cliid = Column(Integer, ForeignKey("consumer_main.app_id"))
+    cliid = Column(Integer, ForeignKey("consumer_client.cliid"))
     phone = Column(String(50))
     date_called = Column(DateTime(timezone=True), server_default=func.now())
     call_status = Column(Enum(CallStatus))
