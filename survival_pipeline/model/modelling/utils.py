@@ -50,7 +50,7 @@ def from_sql_to_pandas(engine, table_name: str):
         table_name (str): The table_name we want to query.
 
     Returns:
-        pandas DataFrame containing the retrieved data.
+        pd.DataFrame: DataFrame containing the retrieved data.
     """
     query = text(f"SELECT * FROM {table_name}")
     # Execute the query and fetch data into a DataFrame

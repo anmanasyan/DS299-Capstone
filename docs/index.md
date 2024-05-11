@@ -17,7 +17,7 @@ Before getting started, ensure you have the following prerequisites installed:
 
 1. Clone the repository:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/anmanasyan/DS299-Capstone
    ```
 2. Navigate to the survival_pipeline folder in the project directory:
    ```bash
