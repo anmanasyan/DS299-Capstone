@@ -6,4 +6,4 @@
 
 At last the database schema looked like: 
 
-![ERD](images/ERD.jpg)
+![ERD](images/ERD.png)
