@@ -51,11 +51,11 @@ async def get_client_info(
     """
     Retrieves client information by cliid(s).
 
-    Parameters:
-    - cliids (List[int]): List of cliids for which client information is to be retrieved.
+    Args:
+        cliids (List[int]): List of cliids for which client information is to be retrieved.
 
     Returns:
-    - List[Dict[str, Union[int, str]]]: List of dictionaries containing client information including cliid, phone, and email.
+        List[Dict[str, Union[int, str]]]: List of dictionaries containing client information including cliid, phone, and email.
     """
     clients_info = (
         db.query(ConsumerClient.cliid, ConsumerClient.phone, ConsumerClient.email)
@@ -84,14 +84,14 @@ async def get_survival_data(
     """
     Retrieves survival data based on parameters.
 
-    Parameters:
-    - pred_period (int): Prediction period for survival data.
-    - lower_limit (float): Lower limit for survival probability.
-    - upper_limit (float): Upper limit for survival probability.
-    - date_created (datetime): Date when the survival data was created. If not provided, latest date_created is chosen.
+    Args:
+        pred_period (int): Prediction period for survival data.
+        lower_limit (float): Lower limit for survival probability.
+        upper_limit (float): Upper limit for survival probability.
+        date_created (datetime): Date when the survival data was created. If not provided, latest date_created is chosen.
 
     Returns:
-    - List[Dict[str, Union[int, float]]]: List of dictionaries containing survival data including cliid and survival probability.
+        List[Dict[str, Union[int, float]]]: List of dictionaries containing survival data including cliid and survival probability.
     """
 
     # If date_created is not provided, fetch the maximal date_created from SurvivalPredictions
@@ -131,12 +131,12 @@ def create_call(Outbound: OC, cliid: int, db: Session = Depends(get_db)):
     """
     Creates a new outbound call record for a client.
 
-    Parameters:
-    - Outbound (OutboundCalls): Outbound call details including call status, comment, and operator name.
-    - cliid (int): Client ID for whom the call is to be created.
+    Args:
+        Outbound (OutboundCalls): Outbound call details including call status, comment, and operator name.
+        cliid (int): Client ID for whom the call is to be created.
 
     Returns:
-    - OutboundCalls: Details of the newly created outbound call.
+        OutboundCalls: Details of the newly created outbound call.
     """
     client_info = db.query(ConsumerClient).filter(ConsumerClient.cliid == cliid).first()
 
@@ -163,12 +163,12 @@ def create_text(
     """
     Creates new outbound text messages for one or more clients.
 
-    Parameters:
-    - Outbound (OutboundMessage): Outbound text message details including sent status and content.
-    - cliids (List[int]): List of client IDs for whom the text messages are to be created.
+    Args:
+        Outbound (OutboundMessage): Outbound text message details including sent status and content.
+        cliids (List[int]): List of client IDs for whom the text messages are to be created.
 
     Returns:
-    - List[OutboundMessage]: List of details of the newly created outbound text messages.
+        List[OutboundMessage]: List of details of the newly created outbound text messages.
     """
 
     texts_created = []
@@ -207,12 +207,12 @@ def create_email(
     """
     Creates new outbound email messages for one or more clients.
 
-    Parameters:
-    - Outbound (OutboundMessage): Outbound email message details including sent status and content.
-    - cliids (List[int]): List of client IDs for whom the email messages are to be created.
+    Args:
+        Outbound (OutboundMessage): Outbound email message details including sent status and content.
+        cliids (List[int]): List of client IDs for whom the email messages are to be created.
 
     Returns:
-    - List[OutboundMessage]: List of details of the newly created outbound email messages.
+        List[OutboundMessage]: List of details of the newly created outbound email messages.
     """
 
     emails_created = []
