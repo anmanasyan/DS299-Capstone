@@ -4,11 +4,4 @@
 
 ::: survival_pipeline.model.modelling.survival_analysis
 
-**Utility functions used**
-
 ::: survival_pipeline.model.modelling.utils
-
-# Model Fitting and Prediction Generation
-**Model fitting**
-
-::: survival_pipeline.model.generate_predictions
