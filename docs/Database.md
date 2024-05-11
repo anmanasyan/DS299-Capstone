@@ -1,7 +1,9 @@
+# Database Schema
+
 # Below you can find information about the database schema!
 
-::: survival_pipeline.model.modelling.survival_analysis
+::: survival_pipeline.db_setup.models
 
 At last the database schema looked like: 
 
-![ERD](/gh-pages/assets/ERD.jpg)
+![ERD](images/ERD.jpg)

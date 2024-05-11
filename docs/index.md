@@ -33,7 +33,7 @@ Before getting started, ensure you have the following prerequisites installed:
 ## Usage
 
 - Access pgAdmin for PostgreSQL management: [http://localhost:5050](http://localhost:5050)
-    - username: admini@admin.com 
+    - username: admin@admin.com 
     - password: admin
     - When running for the first time, you must create a server. Configure it as shown in the below image (Password is blurred it should be `password`.)
     ![Server Setup](images/pgadmin_setup.png)
