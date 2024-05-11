@@ -4,4 +4,4 @@
 
 At last the database schema looked like: 
 
-![ERD](../images/ERD.jpg)
+![ERD](/gh-pages/assets/ERD.jpg)
