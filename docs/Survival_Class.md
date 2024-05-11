@@ -1,3 +1,3 @@
-Below you can find information about the model of the project!
+Below you can find information about the class that was used for the model of the project!
 
-::: survival_pipeline.db_setup.models
+::: survival_pipeline.model.modelling.survival_analysis

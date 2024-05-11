@@ -1,11 +1,11 @@
-# Project Description
-
 # Customer Retention through an API-Driven Survival Analysis within a Microservice Architecture For "Global Credit" UCO CJSC
 
 
+## Description
+
 This project aims to set up a Dockerized environment for PostgreSQL database, pgAdmin for database management, a model container, and an API container. It provides a convenient way to develop, deploy, and manage these components within a single Docker Compose configuration. The overall structure of the project is pictured below!
 
-![Flow](../images/docker.jpg)
+![Docker](images/docker.jpg)
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ Before getting started, ensure you have the following prerequisites installed:
 ## Usage
 
 - Access pgAdmin for PostgreSQL management: [http://localhost:5050](http://localhost:5050)
-    - username: admin@admin.com 
+    - username: admini@admin.com 
     - password: admin
     - When running for the first time, you must create a server. Configure it as shown in the below image (Password is blurred it should be `password`.)
     ![Server Setup](images/pgadmin_setup.png)
