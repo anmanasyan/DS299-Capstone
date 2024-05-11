@@ -37,6 +37,9 @@ app = FastAPI()
 # Default endpoint
 @app.get("/")
 async def root():
+    """
+    Root endpoint.
+    """
     return {"message": "API successfully initiated!"}
 
 
