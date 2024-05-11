@@ -47,7 +47,11 @@ class Survival:
         return model
 
     def plot_kaplan_meier(self, density: bool = False):
-        """Plots the Kaplan-Meier survival or cumulative density curve."""
+        """Plots the Kaplan-Meier survival or cumulative density curve.
+        Args:
+            density (bool): False for Cumulative Density, True for Survival. 
+        """
+        
         self.fit_kaplan_meier()
         if density == False:
             self.km_fitter.plot_survival_function()

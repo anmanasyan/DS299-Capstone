@@ -46,11 +46,11 @@ def from_sql_to_pandas(engine, table_name: str):
     Retrieve data from a PostgreSQL database using SQLAlchemy and return it as a pandas DataFrame.
 
     Args:
-    - engine: Engine for the PostgreSQL database.
-    - table_name: The table_name we want to query.
+        engine: Engine for the PostgreSQL database.
+        table_name (str): The table_name we want to query.
 
     Returns:
-    - pandas DataFrame containing the retrieved data.
+        pandas DataFrame containing the retrieved data.
     """
     query = text(f"SELECT * FROM {table_name}")
     # Execute the query and fetch data into a DataFrame
