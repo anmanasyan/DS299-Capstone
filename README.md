@@ -1,4 +1,4 @@
-# Customer Retention through an API-Driven Survival Analysis within a Microservice Architecture For "Global Credit" UCO CJSC
+# Customer Retention through an API-Driven Survival Analysis within a Microservice Architecture For A Loan Company
 
 
 ## Description
